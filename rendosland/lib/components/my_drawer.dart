@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rendosland/Auth_/login_or_register.dart';
 import 'package:rendosland/pages/setting_page.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -7,7 +8,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -37,8 +38,10 @@ class MyDrawer extends StatelessWidget {
                   title: Text('S E T T I N G S'),
                   leading: Icon(Icons.settings),
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SettingPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SettingsPage()));
                   },
                 ),
               ),
@@ -50,6 +53,12 @@ class MyDrawer extends StatelessWidget {
             child: ListTile(
               title: Text('L O G O U T'),
               leading: Icon(Icons.logout),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => LoginOrRegister())));
+              },
             ),
           ),
         ],
